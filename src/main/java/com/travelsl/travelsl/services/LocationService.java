@@ -18,4 +18,5 @@ public interface LocationService {
     CountryDto saveCountry(CountryDto countryDto);
     List<CountryDto> getAllCountries();
     Map<String , String> getLatAndlong(String address);
+    LocationDto getLocationById(String locationId);
 }

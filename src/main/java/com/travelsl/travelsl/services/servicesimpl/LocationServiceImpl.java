@@ -145,4 +145,9 @@ public class LocationServiceImpl implements LocationService {
             throw new TravelSlException(TravelSlInternalServerError.MAP_BOX_ERROR);
         }
     }
+
+    @Override
+    public LocationDto getLocationById(String locationId) {
+        return mapper.locationModelToLocationDto(locationRepository.findById(locationId).get(),new LocationDto());
+    }
 }

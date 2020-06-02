@@ -63,4 +63,9 @@ public class LocationController implements Controller {
     public ResponseEntity<?> getCoords(@PathVariable("address") String address){
         return ResponseEntity.ok(locationService.getLatAndlong(address));
     }
+    @AuthorizeScope(3)
+    @GetMapping("/{locationId}")
+    public ResponseEntity<?> getLocationById(@PathVariable("locationId") String locationId){
+        return ResponseEntity.ok(locationService.getLocationById(locationId));
+    }
 }
