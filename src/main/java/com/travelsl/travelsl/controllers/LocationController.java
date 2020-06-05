@@ -68,4 +68,9 @@ public class LocationController implements Controller {
     public ResponseEntity<?> getLocationById(@PathVariable("locationId") String locationId){
         return ResponseEntity.ok(locationService.getLocationById(locationId));
     }
+    @AuthorizeScope(3)
+    @GetMapping(path = "/get-country/{id}" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> getCountryById(@PathVariable("id") String id){
+        return ResponseEntity.ok(locationService.getCountryById(id));
+    }
 }

@@ -150,4 +150,9 @@ public class LocationServiceImpl implements LocationService {
     public LocationDto getLocationById(String locationId) {
         return mapper.locationModelToLocationDto(locationRepository.findById(locationId).get(),new LocationDto());
     }
+
+    @Override
+    public CountryDto getCountryById(String id){
+        return mapper.getCountryDto(countryRepository.findById(id).get() , new CountryDto());
+    }
 }
